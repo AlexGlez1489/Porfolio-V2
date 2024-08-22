@@ -1,0 +1,586 @@
+:root {
+    --azul-nav: #171c1f;
+    --azul-b:#5fb7ff;
+    --fuente-principal: "Onest", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: var(--fuente-principal);
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/* Globales */
+
+.contenedor {
+    max-width: 180rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+a, li {
+    text-decoration: none;
+    list-style: none;
+    color: var(--blanco);
+    font-size: 1.6rem;
+}
+p {
+    font-size: 1.8rem;
+}
+/* Estilo para los botones */
+button {
+    background-color:#5fb7ff;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+    color: #ffffff; /* Rosa claro */
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+}
+h2 {
+    color: var(--azul-nav);
+    font-weight: 600;
+}
+button:hover {
+    background-color:#3c93d9; /* Fondo cambia a fucsia/neón al pasar el mouse */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+.nombre-destacado{
+    color: var(--azul-b);
+    
+}
+
+/* Ajustes para enlaces en la barra de navegación */
+.nav a {
+    color: var(--azul-nav); /* Color blanco */
+    font-weight: 700;
+    background-color: white;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background-color: #5fb7ff; /* Línea blanca */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.nav a.active::before {
+    width: 100%;
+    left: 0;
+    background-color: #5fb7ff; /* Línea azul */
+}
+
+.txt-azul {
+    color: var(--azul-b);
+    height: 3px;
+    font-weight: 600;
+    
+}
+/* Estilo para los elementos de la sección info */
+.info-txt h2 {
+    color: var(--azul-nav); /* Morado intenso */
+}
+
+.info-txt h1 {
+    display: inline-block;
+    text-align: center;
+    background-color:#5fb7ff;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+    color: #ffffff; /* Rosa claro */
+    margin-bottom: 1rem;
+}
+
+.info-txt p {
+    font-size: 1.8rem;
+    color: --azul-nav;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+
+
+/* Centrando el texto */
+.centrar-txt {
+    text-align: center;
+}
+
+.navegador-contenedor {
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000; /* Asegura que la barra esté por encima del contenido */
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    padding: 2rem 5rem;
+    font-weight: 700;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+    padding-top: 10rem; /* Ajusta este valor según la altura de tu barra de navegación */
+}
+
+.info-txt {
+   margin: 0 20rem;
+}
+.proyectos {
+    padding: 5rem 0;
+}
+.proyectos-c {
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    column-gap: 2rem;
+    
+}
+.proyects {
+    margin: 4rem 0;
+    padding: 3rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombreado */
+    background-color: #ffffff; /* Asegúrate de que el fondo sea blanco o el color que desees */
+    border-radius: 0.5rem; /* Opcional: agregar esquinas redondeadas */
+}
+
+.proyects img {
+    border-radius: 1rem;
+}
+
+
+.proyects:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.proyects img {
+    width: 400px;
+    height: auto;
+}
+
+.fab {
+    margin: 0 2rem;
+}
+
+.fas {
+    margin: 0 2rem;
+}
+
+.habilidades {
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+   
+}
+
+.flex-h {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.habilidad-item p {
+    font-weight: 500;
+    font-size: 14px;
+}
+.habilidad-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px; /* Ajusta el padding según tus necesidades */
+    margin: 5px; /* Espacio entre los botones */
+    color: #000; /* Color del texto del botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    font-size: 16px; /* Tamaño del texto */
+    text-align: center; /* Centrar el texto dentro del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: all 0.3s ease; /* Suaviza la transición del hover */
+}
+
+.habilidad-item:hover {
+    background-color:var(--azul-b); /* Color de fondo al pasar el ratón */
+    color: #fff; /* Color del texto al pasar el ratón */
+    border-radius: 2rem;
+    transform: scale(1.05);
+    border-color: #fff; /* Color del borde al pasar el ratón */
+}
+.iconos-proyecto i:hover {
+    transform: scale(1.25);
+    transition: 0.3s ease-in-out;
+    color: var(--azul-b);
+}
+.iconos-habilidades {
+    margin: 5rem 0;
+    display: grid;
+    padding-top: 5rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 3rem; /* Espacio entre los íconos */
+}
+
+.iconos-habilidades i {
+    font-size: 6rem; /* Tamaño de los íconos */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.iconos-habilidades i:hover {
+    transform: scale(1.2); /* Efecto de agrandamiento */
+    filter: brightness(1.5); /* Aumenta el brillo del color al pasar el mouse */
+}
+/* Contacto */
+.contacto {
+    padding: 5rem 0;
+}
+
+.contacto h2 {
+    margin-bottom: 2rem;
+}
+
+.contacto-contenido {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 5rem 0;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.info-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.6rem;
+}
+
+.contacto-item i {
+    font-size: 2rem;
+    color: var(--azul-b);
+}
+
+.contacto-item p {
+    margin: 0;
+}
+
+.contacto-item a {
+    color: var(--azul-nav);
+    text-decoration: none;
+}
+
+.contacto-item a:hover {
+    color: var(--azul-b);
+    transition: .3s ease-in-out;
+}
+
+.contacto-foto img {
+    border-radius: 50%;
+    width: 250px; /* Ajusta el tamaño de la foto según lo necesites */
+    height: 250px;
+    object-fit: cover;
+}
+.contacto-foto img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.footer {
+    background-color: var(--azul-nav); /* Fondo del footer */
+    padding: 2rem 0;
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.footer-redes {
+    display: flex;
+    gap: 2rem;
+}
+
+.icono-footer {
+    color: #ffffff; /* Color de los iconos */
+    font-size: 2.4rem;
+    transition: color 0.3s ease;
+}
+
+.icono-footer:hover {
+    color: var(--azul-b); /* Cambia a azul claro al pasar el mouse */
+}
+
+.footer-copy {
+    margin-top: 2rem;
+    border-top: 1px solid #ffffff;
+    padding-top: 1rem;
+    font-size: 1.4rem;
+}
+
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.language-icon {
+    margin-left: 10px;
+    display: block;
+}
+
+.language-icon img {
+    width: 24px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    vertical-align: middle;
+}
+
+
+/* Estilos para la pantalla de carga */
+.loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.loader .spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-left-color: #3498db;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.con-txt {
+    display: flex;
+    margin: 0 auto;
+   padding: 4rem 5rem 0 5rem;
+  
+}
+.con-txt p {
+    text-wrap: wrap;
+    font-size: 1.8rem;
+}
+/* Adaptaciones para pantallas pequeñas */
+
+@media (max-width: 1280px) {
+    .info-txt {
+        margin: 0 2rem;
+     }
+}
+@media (max-width: 768px) {
+
+    .nav {
+        justify-content: center;
+    }
+
+    .info {
+        display: flex;
+        column-gap: 1rem;
+    }
+
+    .info-txt {
+        padding: 0 2rem;
+    }
+
+    .info-img img {
+        width: 300px;
+    }
+
+    .proyects img {
+        width: 300px;
+        height: auto;
+    }
+
+    .iconos-habilidades {
+        margin: 5rem 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 3rem; /* Espacio entre los íconos */
+    }
+
+    .flex-h {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .boton-ver-cv {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 1rem 0; /* Ajustar el padding si es necesario */
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    }
+
+    /* Asegúrate de que otros botones también se ajusten al ancho */
+    button {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    a, li {
+        font-size: 1.2rem;
+    }
+
+    .nav {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        padding: 2rem 1rem;
+        font-weight: 700;
+        align-items: center;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .info-txt {
+        padding: 0 2rem;
+    }
+
+    .info-txt h1 {
+        display: flex;
+        text-align: center;
+        background-color:#5fb7ff;
+        border-radius: 1rem;
+        padding: 1rem;
+        font-size: 1.4rem;
+        color: #ffffff; /* Rosa claro */
+        margin-bottom: 1rem;
+    }
+    .info-txt h2 {
+        text-align: center;
+    }
+
+    .info-img img {
+        width: 200px;
+    }
+
+    .proyectos-c {
+        padding-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        align-items: center;
+       
+    }
+
+    .proyects {
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .iconos-habilidades {
+        margin: 5rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 3rem; /* Espacio entre los íconos */
+    }
+
+    .habilidad-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px; /* Ajusta el padding según tus necesidades */
+        margin: 5px; /* Espacio entre los botones */
+        background-color: #fff; /* Color de fondo del botón */
+        color: #000; /* Color del texto del botón */
+        border-radius: 5px; /* Bordes redondeados del botón */
+        font-size: 16px; /* Tamaño del texto */
+        text-align: center; /* Centrar el texto dentro del botón */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        transition: all 0.3s ease; /* Suaviza la transición del hover */
+    }
+
+    .contacto-contenido {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+
+    }
+    
+    
+    .con-txt {
+        display: flex;
+        margin: 0 auto;
+       padding: 2rem;
+      
+    }
+
+
+}
